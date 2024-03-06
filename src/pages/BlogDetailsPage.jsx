@@ -7,11 +7,11 @@ import SideBar from "../Components/SideBar";
 function BlogDetailsPage() {
   const { id } = useParams();
   const [blog, setBlog] = useState({});
-
+const BackendUrl=`https://blog-server-code.onrender.com/api/blog/${id}`
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/blog/${id}`);
+        const response = await fetch(BackendUrl);
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }

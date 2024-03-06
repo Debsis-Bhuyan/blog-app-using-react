@@ -5,7 +5,7 @@ import { FaUser } from "react-icons/fa";
 function BlogCard({ blogs, currentPage, pageSize, selectedCategory }) {
   const filterdBlogs = blogs
     .filter((blog) => !selectedCategory || blog.category === selectedCategory)
-    .slice((currentPage - 1) * pageSize);
+    // .slice((currentPage - 1) * pageSize);
 
   return (
     <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">

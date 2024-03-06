@@ -6,7 +6,7 @@ function SideBar() {
   const [popularBlogs, setPopularBlogs] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/blogs")
+    fetch("https://blog-server-code.onrender.com/api/blogs")
       .then((res) => res.json())
       .then((data) => setPopularBlogs(data));
   }, []);
@@ -23,7 +23,7 @@ function SideBar() {
             >
               <h4 className="font-medium mb-2">{blog.title}</h4>
               <Link
-                to="/"
+                to={`/blogs/${blog.id}`}
                 className="text-base mb-2 hover:text-orange-500 inline-flex items-center"
               >
                 Read more <FaArrowRight className="mt-1 ml-2" />
@@ -42,7 +42,7 @@ function SideBar() {
             >
               <h4 className="font-medium mb-2">{blog.title}</h4>
               <Link
-                to="/"
+                to={`/blogs/${blog.id}`}
                 className="text-base mb-2 hover:text-orange-500 inline-flex items-center"
               >
                 Read more <FaArrowRight className="mt-1 ml-2" />

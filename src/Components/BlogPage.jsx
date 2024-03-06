@@ -10,8 +10,10 @@ function BlogPage() {
   const [selectedCategory, setSelectCategory] = useState(null);
   const [activeCategorry, setActiveCategory] = useState(null);
   useEffect(() => {
+    const BackendUrl=`https://blog-server-code.onrender.com/api`
+
     async function fetchBlogs() {
-      let url = `http://localhost:5000/api/blogs?page=${currentPage}&limit=${PageSize}`;
+      let url = `${BackendUrl}/blogs?page=${currentPage}&limit=${PageSize}`;
 
       if (selectedCategory) {
         url += `&category=${selectedCategory}`;
